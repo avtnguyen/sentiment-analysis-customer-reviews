@@ -109,29 +109,40 @@ Overall, the goal of the sentiment analysis is to understand the sentiment of th
 The results of the analysis can be used to gain insights into customer experiences and identify areas for improvement in the restaurant industry.
 
 ### Evaluation metrics
-For imbalance dataset and classification model, the following metrics are used to evaluate the model performance:
+For classification model, the following metrics are used to evaluate the model performance:
 * Precision
 * Recall
 * f1 score
 
+For unsupervised classification model, the following metrics are used to evaluate the model performance:
+* Silhouette score
+
+### List of libraries used in this project
+
+from google.cloud import storage
+from google.cloud import bigquery
+import numpy as np
+import string
+import numpy as np
+from sklearn.cluster import KMeans
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.model_selection import train_test_split
+from sklearn.model_selection import GridSearchCV
+from sklearn.preprocessing import StandardScaler
+from sklearn.feature_extraction.text import TfidfTransformer
+from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
+import matplotlib.pyplot as plt
+import seaborn as sns
+from wordcloud import WordCloud
+import folium
+import nltk
+from nltk.corpus import stopwords
+import re
+from nltk.tokenize import word_tokenize
+from nltk.stem import WordNetLemmatizer
+from collections import Counter
+
+
 ### Results:
-- Both the precision, recall and f1 scores are low in all models. This could be due to the small imbalance dataset that we have.
-- Given the dataset without any resampling technique, XGBoost outperformed other algorithms.
-- When data augmentation technique is implemented, the performance of Random Forrest model is improved significantly using SMOTE+TOMEK technique as shown in table below.
-- More data is needed to improve the model accuracy for oil spill detection
-
-<img src="https://github.com/avtnguyen/Oil-Spill-Detection-ML-Model/blob/main/f1_scores.png" width="700" align = "center">
-
-| model       | resample                     | precision  | recall | f1   |
-| ------------|:----------------------------:| ----------:|-------:|-----:|
-| DNN         | SMOTE                        |   0.267    |0.8     |0.4   |
-| DNN         | SMOTE+TOMEK                  |   0.385    |0.5     |0.435 |
-| RF          | SMOTE+TOMEK                  |  0.625     |0.5     |0.555 |
-| RF          | SMOTE+ENN                    |   0.461    |0.6     |0.522 |
-| XGBoost     | ADASYN                       |   0.5      |0.5     |0.5   |
-| XGBoost     | SMOTE                        |   0.454    |0.5     |0.476 |
-| DNN         | No resample                  |   0.114    |0.9     |0.2   |
-| RF          | No resample                  |   0.2      |0.1     |0.133 |
-| XGBoost     | No resample                  |   0.357    |0.5     |0.417 |
 
 
