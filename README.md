@@ -55,23 +55,58 @@ Specifically, the business and reviews datasets will be used to draw insights on
 
 Data exploration code and analysis can be found [here](https://github.com/avtnguyen/sentiment-analysis-customer-reviews/blob/main/Yelp_Data_Exploration.html)
 
-**2. Feature selection:** I performed feature selection based on the univariate statistical tests by computing the ANOVA F-value betwen the numerical features (e.g., f_1, f_2...) and the label target. The new dataset includes the most 25 features and f_46 because it is a categorical feature. 
+**2. Unsupervised classification** An unsupervised model will be built to classify businesses based on their keywords descriptions 
+In this part of the project, an unsupervised machine learning model will be built to classify businesses based on their keywords descriptions. 
+The model will use the k-means clustering algorithm and the Natural Language Toolkit (NLTK) library for text processing.
 
-**3. Splitting the dataset** to train test sets based on the following specifications: Train size: 75%, test size: 25%, stratifying based on the y label  to ensure that both the train and test sets have the same class proportion similar to the original dataset. After that, I normalized both train and test datasets using the StandardScaller() to remove the mean and scaling to unit variance. 
+K-means clustering is a popular unsupervised learning method that groups similar data points together into clusters. 
+It works by initially selecting a predetermined number of "centroids" or starting points, and then iteratively assigning data points to the cluster with the closest centroid. 
+The centroids are then updated to the mean of the data points in the cluster, and the process is repeated until convergence. Hyperparameters tuning will also be performed to obtain the optimum solutions
 
-**4. Data augmentation**: Since the dataset is highly imbalanced, i implemented multiple data augmentation techniques to improve the quality of the dataset based on the following algorithms:
+NLTK is a widely-used library for natural language processing tasks such as tokenization, stemming, and lemmatization. 
+It will be used to preprocess the text data in the keywords descriptions, such as by removing stop words and punctuation, and converting the words to their base form (e.g., running -> run). 
+This will allow the model to focus on the meaningful content of the text and improve the accuracy of the classification.
 
-* Synthetic Minority Oversampling Technique(SMOTE): The sample in minority class is first selected randomly and its k nearest minority class neighbors are found based on the K-nearest neighbors algorithm. The synthetic data is generated between two instances in feature space. 
-* Adaptive Synthetic Sampling (ADASYN): The synthetic data for minority class is generated based on the desnity distribution of the minority class. Specifically, more data is created in area with low density of minority class and less data is generated in area with high density of minority example
-* SMOTE-TOMEK: Combine SMOTE and TOMEK techniqes where the oversampling technique for minority class and the cleaning using Tomek links.  
-* SMOTE- ENN: Combine SMOTE and Edited Nearest Neighbours (ENN) techniques where the oversampling technique for minority class and the cleaning using ENN
+Overall, the goal of the unsupervised model is to classify businesses into different groups based on their keywords descriptions, 
+which can provide valuable insights into the types of businesses that exist in the Yelp database and how they are related to each other.
 
-Source: [Imbalanced learn](https://imbalanced-learn.org/stable/references/over_sampling.html)
- 
-**5. Build a simple deep learning network** and combine with multiple data augmentation techniques [See code here](https://github.com/avtnguyen/Oil-Spill-Detection-ML-Model/blob/main/oil_spill_detection_deepLearningModel.ipynb)
-<img src="https://github.com/avtnguyen/Oil-Spill-Detection-ML-Model/blob/main/DNN_summary.png">
+**3. Machine learning model for sentiment analysis** Text preprocessing and machine learning model building: The project will preprocess text data and build machine learning models using Gaussian Naive Bayes, Support Vector Machines, and XGBoost to predict the sentiment of reviews.
+Here, I will use the Natural Language Toolkit (NLTK) library to perform text preprocessing, which will include the following steps:
 
-**6. Implement ensemble learning algorithms**, which include Random Forest, and XGBoost, and compare the model performance given the unbalanced dataset for oil spill detection [See code here](https://github.com/avtnguyen/Oil-Spill-Detection-ML-Model/blob/main/oil_spill_detection_model.ipynb)
+* Tokenization: This process involves splitting the text into smaller units called tokens, which can be words, phrases, or symbols. 
+Tokenization helps to break down the text into its individual components, which can be useful for further analysis.
+
+* Stopwords removal: Stopwords are common words that carry little meaning and are often removed from text data to reduce noise and improve the accuracy of machine learning models. 
+Examples of stopwords include "a," "an," and "the."
+
+* Punctuation removal: Removing punctuation from the text data can help to reduce noise and simplify the data for machine learning models.
+
+* Lemmatization: This process involves reducing words to their base form (e.g., running -> run) to help the model focus on the meaning of the text rather than the specific word forms.
+
+After text preprocessing, I will build machine learning models using Gaussian Naive Bayes, Support Vector Machines, and XGBoost to predict the sentiment of the reviews. 
+
+Gaussian Naive Bayes is a probabilistic classifier that makes assumptions about the independence of features and uses Bayes' theorem to calculate the probability of a data point belonging to a certain class. 
+
+Support Vector Machines are linear models that find the hyperplane in a high-dimensional space that maximally separates different classes. 
+
+XGBoost is a gradient boosting algorithm that creates an ensemble of decision trees and uses them to make predictions.
+
+Overall, the goal of this phase of the project is to preprocess the text data and build machine learning models that can accurately predict the sentiment of the reviews, 
+which can provide valuable insights into customer experiences and preferences in the restaurant industry.
+
+**4. Sentiment analysis**: Sentiment analysis is the process of using natural language processing techniques to automatically identify and extract subjective information from text data. 
+In this project, sentiment analysis will be conducted on the most popular businesses and pizza restaurants in Philadelphia.
+
+The project will use monograms and bigrams analysis to identify unique keywords for bad and good reviews. 
+Monograms are single words, while bigrams are pairs of words that occur together. 
+By analyzing the frequency of these keywords in the reviews, the project can identify trends and patterns that can help to understand the sentiment of the reviews.
+
+Data visualization with word clouds can also be used to gain insights from the sentiment analysis. 
+A word cloud is a visual representation of the most frequently occurring words in a dataset, where the size of the word reflects its frequency. 
+By creating word clouds for the good and bad reviews, the project can quickly identify the most commonly mentioned words and themes, which can provide valuable insights into the sentiment of the reviews.
+
+Overall, the goal of the sentiment analysis is to understand the sentiment of the reviews of the most popular businesses and pizza restaurants in Philadelphia.
+The results of the analysis can be used to gain insights into customer experiences and identify areas for improvement in the restaurant industry.
 
 ### Evaluation metrics
 For imbalance dataset and classification model, the following metrics are used to evaluate the model performance:
