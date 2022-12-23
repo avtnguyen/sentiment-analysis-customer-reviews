@@ -120,26 +120,47 @@ For unsupervised classification model, the following metrics are used to evaluat
 ### List of libraries used in this project
 
 from google.cloud import storage
+
 from google.cloud import bigquery
+
 import numpy as np
+
 import string
+
 import numpy as np
+
 from sklearn.cluster import KMeans
+
 from sklearn.feature_extraction.text import CountVectorizer
+
 from sklearn.model_selection import train_test_split
+
 from sklearn.model_selection import GridSearchCV
+
 from sklearn.preprocessing import StandardScaler
+
 from sklearn.feature_extraction.text import TfidfTransformer
+
 from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
+
 import matplotlib.pyplot as plt
+
 import seaborn as sns
+
 from wordcloud import WordCloud
+
 import folium
+
 import nltk
+
 from nltk.corpus import stopwords
+
 import re
+
 from nltk.tokenize import word_tokenize
+
 from nltk.stem import WordNetLemmatizer
+
 from collections import Counter
 
 
