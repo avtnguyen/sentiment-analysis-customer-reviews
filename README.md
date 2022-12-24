@@ -46,7 +46,7 @@ Aggregated check-ins over time for each of the 131,930 businesses
 ### Project Pipeline :
 **1. Data processing and exploration**: 
 
-<img src="/images/pizza_wordcloud.png" alt="Alt text" title="Sentiment" width = 850">
+<img src="/images/pizza_wordcloud.png" alt="Alt text" title="Sentiment" width = "850">
 
 In this stage, the project will use the BigQuery API in Python with Jupyter Notebook in the Vertex AI workbench to perform queries on the large (~5 GB) Yelp datasets. 
 Specifically, the business and reviews datasets will be used to draw insights on businesses with reviews on Yelp and answer the following questions:
