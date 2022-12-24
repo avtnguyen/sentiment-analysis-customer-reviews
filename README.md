@@ -1,6 +1,6 @@
 # Sentiment Analysis on Customer Reviews from Yelp
 
-<img src="/images/pic1.jpg" alt="Alt text" title="Sentiment" width = "300">
+<img src="/images/pic1.jpg" alt="Alt text" title="Sentiment" width = "400">
 
 #### -- Project Status: [Completed]
 
@@ -44,7 +44,7 @@ Aggregated check-ins over time for each of the 131,930 businesses
 [Source](https://www.yelp.com/dataset)
 
 ### Project Pipeline :
-**1. Data processing and exploration: In this stage, the project will use the BigQuery API in Python with Jupyter Notebook in the Vertex AI workbench to perform queries on the large (~5 GB) Yelp datasets. 
+**1. Data processing and exploration**: In this stage, the project will use the BigQuery API in Python with Jupyter Notebook in the Vertex AI workbench to perform queries on the large (~5 GB) Yelp datasets. 
 Specifically, the business and reviews datasets will be used to draw insights on businesses with reviews on Yelp and answer the following questions:
 
 * Which ten cities have the most opened businesses on Yelp?
@@ -57,6 +57,18 @@ Specifically, the business and reviews datasets will be used to draw insights on
 
 Data exploration code and analysis can be found [here](https://github.com/avtnguyen/sentiment-analysis-customer-reviews/blob/main/Yelp_Data_Exploration.html)
 
+**Example code to extract data from BigQuery**
+
+```
+### Get the first 5 instances from business table:
+query = f"""
+            SELECT *
+            FROM {bq_dir}.business
+            LIMIT 5
+    """
+business = bq.query(query = query).to_dataframe()
+
+```
 **2. Unsupervised classification** An unsupervised model will be built to classify businesses based on their keywords descriptions 
 In this part of the project, an unsupervised machine learning model will be built to classify businesses based on their keywords descriptions. 
 The model will use the k-means clustering algorithm and the Natural Language Toolkit (NLTK) library for text processing.
