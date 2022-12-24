@@ -1,6 +1,6 @@
 # Sentiment Analysis on Customer Reviews from Yelp
 
-<img src="/images/pic1.jpg" alt="Alt text" title="Sentiment" >
+<img src="/images/pic1.jpg" alt="Alt text" title="Sentiment" width = "400">
 
 #### -- Project Status: [Completed]
 
@@ -46,7 +46,7 @@ Aggregated check-ins over time for each of the 131,930 businesses
 ### Project Pipeline :
 **1. Data processing and exploration**: 
 
-<img src="/images/pizza_wordcloud.png" alt="Alt text" title="Sentiment" width = "450">
+<img src="/images/pizza_wordcloud.png" alt="Alt text" title="Sentiment" width = "550">
 
 In this stage, the project will use the BigQuery API in Python with Jupyter Notebook in the Vertex AI workbench to perform queries on the large (~5 GB) Yelp datasets. 
 Specifically, the business and reviews datasets will be used to draw insights on businesses with reviews on Yelp and answer the following questions:
@@ -93,7 +93,7 @@ Unsupervised classification code with K-means can be found [here](https://github
 **Example results for a cluster predicted from the model**
 
 ```
-### Get the first 10 instances from the same predicted categories from the model:
+### Get the first 10 instances from the same predicted categories :
 print(cat_df[cat_df['predict_cat']==7]['categories'][0:10].to_string())
 8                   Food, Coffee & Tea
 11                  Coffee & Tea, Food
@@ -108,7 +108,11 @@ print(cat_df[cat_df['predict_cat']==7]['categories'][0:10].to_string())
 
 ```
 
-**3. Machine learning model for sentiment analysis** Text preprocessing and machine learning model building: The project will preprocess text data and build machine learning models using Gaussian Naive Bayes, Support Vector Machines, and XGBoost to predict the sentiment of reviews.
+**3. Machine learning model for sentiment analysis** 
+
+<img src="/images/Idea.jpg" alt="Alt text" title="Sentiment" width = "550">
+
+Text preprocessing and machine learning model building: The project will preprocess text data and build machine learning models using Gaussian Naive Bayes, Support Vector Machines, and XGBoost to predict the sentiment of reviews.
 Here, I will use the Natural Language Toolkit (NLTK) library to perform text preprocessing, which will include the following steps:
 
 * Tokenization: This process involves splitting the text into smaller units called tokens, which can be words, phrases, or symbols. 
