@@ -44,7 +44,11 @@ Aggregated check-ins over time for each of the 131,930 businesses
 [Source](https://www.yelp.com/dataset)
 
 ### Project Pipeline :
-**1. Data processing and exploration**: In this stage, the project will use the BigQuery API in Python with Jupyter Notebook in the Vertex AI workbench to perform queries on the large (~5 GB) Yelp datasets. 
+**1. Data processing and exploration**: 
+
+<img src="/images/pizza_wordcloud.png" alt="Alt text" title="Sentiment" width = "450">
+
+In this stage, the project will use the BigQuery API in Python with Jupyter Notebook in the Vertex AI workbench to perform queries on the large (~5 GB) Yelp datasets. 
 Specifically, the business and reviews datasets will be used to draw insights on businesses with reviews on Yelp and answer the following questions:
 
 * Which ten cities have the most opened businesses on Yelp?
@@ -55,7 +59,7 @@ Specifically, the business and reviews datasets will be used to draw insights on
 * What keywords can be used to distinguish between good and bad reviews for the top businesses in Philadelphia?
 * How do the reviews for pizza restaurants compare?
 
-Data exploration code and analysis can be found [here](https://github.com/avtnguyen/sentiment-analysis-customer-reviews/blob/main/Yelp_Data_Exploration.html)
+Data exploration code and analysis can be found [here](https://github.com/avtnguyen/sentiment-analysis-customer-reviews/blob/main/Yelp_Data_Exploration.ipynb)
 
 **Example code to extract data from BigQuery**
 
@@ -83,6 +87,26 @@ This will allow the model to focus on the meaningful content of the text and imp
 
 Overall, the goal of the unsupervised model is to classify businesses into different groups based on their keywords descriptions, 
 which can provide valuable insights into the types of businesses that exist in the Yelp database and how they are related to each other.
+
+Unsupervised classification code with K-means can be found [here](https://github.com/avtnguyen/sentiment-analysis-customer-reviews/blob/main/Kmeans_model_business.ipynb)
+
+**Example results for a cluster predicted from the model**
+
+```
+### Get the first 10 instances from the same predicted categories from the model:
+print(cat_df[cat_df['predict_cat']==7]['categories'][0:10].to_string())
+8                   Food, Coffee & Tea
+11                  Coffee & Tea, Food
+138         Food, Donuts, Coffee & Tea
+149         Donuts, Coffee & Tea, Food
+177         Donuts, Food, Coffee & Tea
+179         Food, Coffee & Tea, Donuts
+186         Coffee & Tea, Food, Donuts
+187         Coffee & Tea, Donuts, Food
+284    Restaurants, Coffee & Tea, Food
+358    Food, Coffee & Tea, Restaurants
+
+```
 
 **3. Machine learning model for sentiment analysis** Text preprocessing and machine learning model building: The project will preprocess text data and build machine learning models using Gaussian Naive Bayes, Support Vector Machines, and XGBoost to predict the sentiment of reviews.
 Here, I will use the Natural Language Toolkit (NLTK) library to perform text preprocessing, which will include the following steps:
