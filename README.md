@@ -1,6 +1,6 @@
 # Sentiment Analysis on Customer Reviews from Yelp
 
-<img src="/images/pic1.jpg" alt="Alt text" title="Sentiment">
+<img src="/images/pic1.jpg" alt="Alt text" title="Sentiment" width = "300">
 
 #### -- Project Status: [Completed]
 
