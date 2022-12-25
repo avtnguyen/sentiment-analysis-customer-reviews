@@ -43,6 +43,34 @@ Over 1.2 million business attributes like hours, parking, availability, and ambi
 Aggregated check-ins over time for each of the 131,930 businesses
 [Source](https://www.yelp.com/dataset)
 
+### Installing
+
+**Running the analysis**
+
+To run the analysis, follow the steps in the Jupyter Notebooks:
+1. [Data exploration and sentiment analysis](https://github.com/avtnguyen/sentiment-analysis-customer-reviews/blob/main/Yelp_Data_Exploration.ipynb)
+2. [Unsupervised learning for business categories classification](https://github.com/avtnguyen/sentiment-analysis-customer-reviews/blob/main/Kmeans_model_business.ipynb)
+3. [Machine learning model for sentiment predictions](https://github.com/avtnguyen/sentiment-analysis-customer-reviews/blob/main/yelp_Rest_reviews_ML_model.ipynb)
+
+**Built With**
+
+* Python - Programming language
+
+* Jupyter Notebook - Interactive coding environment
+
+* pandas - Data manipulation and analysis library
+
+* nltk - text processing (tokenization, cleaning, lemmatization)
+
+* scikit-learn - Machine learning library
+
+* xgboost - Gradient boosting algorithm
+
+* matplotlib, searborn, folium, wordcloud - Data visualization
+
+* BigQuery API - Data extraction and analysis
+
+
 ### Project Pipeline :
 **1. Data processing and exploration**: 
 
@@ -163,50 +191,14 @@ For classification model, the following metrics are used to evaluate the model p
 For unsupervised classification model, the following metrics are used to evaluate the model performance:
 * Silhouette score
 
-### List of libraries used in this project
+## References
+* https://www.yelp.com/dataset
+## Contributing Members
 
-from google.cloud import storage
+**Team Leads (Contacts) : [Anh Nguyen ](https://github.com/avtnguyen)**
 
-from google.cloud import bigquery
+## Contact
+* Feel free to contact team leads with any questions or if you are interested in contributing!
 
-import numpy as np
-
-import string
-
-import numpy as np
-
-from sklearn.cluster import KMeans
-
-from sklearn.feature_extraction.text import CountVectorizer
-
-from sklearn.model_selection import train_test_split
-
-from sklearn.model_selection import GridSearchCV
-
-from sklearn.preprocessing import StandardScaler
-
-from sklearn.feature_extraction.text import TfidfTransformer
-
-from sklearn.metrics import silhouette_score, calinski_harabasz_score, davies_bouldin_score
-
-import matplotlib.pyplot as plt
-
-import seaborn as sns
-
-from wordcloud import WordCloud
-
-import folium
-
-import nltk
-
-from nltk.corpus import stopwords
-
-import re
-
-from nltk.tokenize import word_tokenize
-
-from nltk.stem import WordNetLemmatizer
-
-from collections import Counter
-
-
+### License
+This project is licensed under the MIT License - see the LICENSE file for details.
