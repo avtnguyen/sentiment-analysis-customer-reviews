@@ -155,12 +155,6 @@ Examples of stopwords include "a," "an," and "the."
 
 After text preprocessing, I will build machine learning models using Gaussian Naive Bayes, Support Vector Machines, and XGBoost to predict the sentiment of the reviews. 
 
-Gaussian Naive Bayes is a probabilistic classifier that makes assumptions about the independence of features and uses Bayes' theorem to calculate the probability of a data point belonging to a certain class. 
-
-Support Vector Machines are linear models that find the hyperplane in a high-dimensional space that maximally separates different classes. 
-
-XGBoost is a gradient boosting algorithm that creates an ensemble of decision trees and uses them to make predictions.
-
 Overall, the goal of this phase of the project is to preprocess the text data and build machine learning models that can accurately predict the sentiment of the reviews, 
 which can provide valuable insights into customer experiences and preferences in the restaurant industry.
 
@@ -177,7 +171,7 @@ Data visualization with word clouds can also be used to gain insights from the s
 A word cloud is a visual representation of the most frequently occurring words in a dataset, where the size of the word reflects its frequency. 
 By creating word clouds for the good and bad reviews, the project can quickly identify the most commonly mentioned words and themes, which can provide valuable insights into the sentiment of the reviews.
 
-Overall, the goal of the sentiment analysis is to understand the sentiment of the reviews of the most popular businesses and pizza restaurants in Philadelphia.
+The goal of the sentiment analysis is to understand the sentiment of the reviews of the most popular businesses and pizza restaurants in Philadelphia.
 The results of the analysis can be used to gain insights into customer experiences and identify areas for improvement in the restaurant industry.
 
 Sentiment analysis on customer reviews can be found [here](https://github.com/avtnguyen/sentiment-analysis-customer-reviews/blob/main/Yelp_Data_Exploration.html)
